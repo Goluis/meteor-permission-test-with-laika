@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 suite('Posts Permissions', function() {
-  ltest('access granted for type==comment', function(done, server, client) {
+  test('access granted for type==comment', function(done, server, client) {
     server.eval(function() {
       Posts.find().observe({
         added: onAdded
@@ -22,7 +22,7 @@ suite('Posts Permissions', function() {
     });
   });
 
-  ltest('access denied for other types', function(done, server, client) {
+  test('access denied for other types', function(done, server, client) {
     client.eval(function() {
       Posts.find().observe({
         removed: onRemoved
